@@ -1,0 +1,28 @@
+frontend:
+  image: nginx:1.25-alpine
+  replicaCount: 2
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 200m
+      memory: 128Mi
+
+backend:
+  image: YOUR_REGISTRY/vector8-backend:TAG
+  replicaCount: 2
+  port: 8080
+  args: []
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 200m
+      memory: 128Mi
+
+ingress:
+  enabled: true
+  className: nginx
+  host: ""
