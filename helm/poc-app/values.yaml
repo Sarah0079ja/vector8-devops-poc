@@ -1,5 +1,7 @@
 frontend:
-  image: nginx:1.25-alpine
+  image:
+    repository: vintage007/vector8-frontend
+    tag: latest
   replicaCount: 2
   resources:
     requests:
@@ -10,7 +12,9 @@ frontend:
       memory: 128Mi
 
 backend:
-  image: YOUR_REGISTRY/vector8-backend:TAG
+  image:
+    repository: vintage007/vector8-backend
+    tag: latest
   replicaCount: 2
   port: 8080
   args: []
