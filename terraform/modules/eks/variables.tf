@@ -44,3 +44,14 @@ variable "max_size" {
   type    = number
   default = 2
 }
+
+variable "cluster_endpoint_public_access" {
+  type        = bool
+  description = "Whether EKS API endpoint is publicly accessible"
+  default     = true
+}
+
+variable "cluster_endpoint_public_access_cidrs" {
+  type    = list(string)
+  default = ["0.0.0.0/0"]
+}

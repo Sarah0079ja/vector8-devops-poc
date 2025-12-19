@@ -23,7 +23,8 @@ module "eks" {
   max_size            = var.max_size
   node_instance_types = var.node_instance_types
 
-  cluster_endpoint_public_access = var.cluster_endpoint_public_access
-
-
+ 
+  cluster_endpoint_public_access       = var.cluster_endpoint_public_access
+  cluster_endpoint_public_access_cidrs = var.cluster_endpoint_public_access_cidrs
 }
+

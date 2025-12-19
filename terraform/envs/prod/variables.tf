@@ -55,8 +55,14 @@ variable "node_instance_types" {
 }
 
 variable "cluster_endpoint_public_access" {
-  type        = bool
-  description = "Whether EKS API endpoint is publicly accessible"
-  default     = true
+  type    = bool
+  default = true
 }
+
+variable "cluster_endpoint_public_access_cidrs" {
+  type    = list(string)
+  default = ["0.0.0.0/0"]
+}
+
+
 

@@ -83,8 +83,26 @@ To keep this POC simple and cost-effective, a few deliberate compromises were ma
 
 The cluster runs with a minimal worker node setup, so application-level high availability is limited compared to a full production environment. The database runs inside the cluster instead of using a managed service, and a full monitoring and alerting stack was intentionally left out to keep scope and cost under control.
 
-
+<!-- Network -->
 Network isolation is kept basic, with ingress acting as the main external boundary. Public container images are used to avoid spending time on application development and keep the focus on infrastructure, GitOps, and deployment workflows.
+
+<!-- Dev -->
+
+Public API endpoint open for faster iteration
+
+Worker nodes private
+
+Ingress used for external exposure
+
+<!-- Prod -->
+
+Public API endpoint restricted to admin IP CIDRs
+
+Workers private + no public IPs
+
+NetworkPolicy applied to backend
+
+RBAC baseline defined (least privilege)
 
 In a production setup, these areas would be expanded with multiple nodes, managed services, stronger isolation, and full observability.
 

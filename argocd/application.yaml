@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vector8-poc
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Sarah0079ja/vector8-devops-poc.git
+    targetRevision: main
+    path: helm/poc-app
+    helm:
+      releaseName: vector8
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: vector8
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

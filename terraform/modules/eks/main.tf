@@ -18,7 +18,7 @@ module "eks" {
   subnet_ids = var.private_subnet_ids
 
   # API endpoint access (POC-friendly)
-  cluster_endpoint_public_access = true
+ cluster_endpoint_public_access = var.cluster_endpoint_public_access
 
 
   # Enable IRSA for future add-ons
@@ -50,6 +50,9 @@ module "eks" {
       node_instance_types = var.node_instance_types
 
       subnet_ids = var.private_subnet_ids
+
+      
+
     }
   }
 
