@@ -7,7 +7,7 @@ The platform is built on AWS EKS and provisioned entirely using Terraform. Appli
 
 Git is the single source of truth. Infrastructure changes are managed through Terraform, and application deployments occur when Argo CD detects changes in Git, rather than being pushed directly from CI.
 
-
+<!-- Architecture -->
 A dedicated AWS VPC with public and private subnets across two availability zones
 An EKS cluster with an AWS-managed control plane
 Worker nodes running exclusively in private subnets
